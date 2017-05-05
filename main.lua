@@ -1,11 +1,17 @@
-local Player = require('player')
+local Ball = require('ball')
 local Brick = require('brick')
+local Player = require('player')
+
+gameOver = false
 
 local width, height = love.graphics.getDimensions()
 local entities = { }
 
 local player = Player(10, 100)
 table.insert(entities, player)
+
+local ball = Ball(width/2, height/2)
+table.insert(entities, ball)
 
 function makeBricks(num)
 	xBase = 10
@@ -17,7 +23,7 @@ function makeBricks(num)
 			xBase = 10
 		else
 			xBase = xBase + 30
-		end	
+		end
 		table.insert(entities, brick)
 	end
 end
@@ -26,7 +32,7 @@ function love.load()
 	-- music = love.audio.newSource('/audio/brickmusic.mp3')
 	-- music:setLooping(true)
 	-- music:play()
-	local nBricks = 300
+	local nBricks = 100
 	makeBricks(nBricks)
 end
 

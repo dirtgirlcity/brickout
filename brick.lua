@@ -15,6 +15,7 @@ function Brick(x, y)
 end
 
 function brickClass:draw()
+	love.graphics.setColor(255, 255, 255)
 	if not self.broken then
 		love.graphics.rectangle( 'fill', self.x, self.y, self.w, self.h )
 		-- love.graphics.draw(love.graphics.newImage('/images/brick.png', self.x, self.y)

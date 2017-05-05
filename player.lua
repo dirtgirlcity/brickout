@@ -16,6 +16,7 @@ function Player(h, w)
 end
 
 function playerClass:draw()
+  love.graphics.setColor(255, 255, 255)
   love.graphics.rectangle( 'fill', self.x, self.y, self.w, self.h )
   -- love.graphics.draw(self.image, self.x, self.y)
 end
